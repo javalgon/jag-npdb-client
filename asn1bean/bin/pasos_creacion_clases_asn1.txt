@@ -1,0 +1,13 @@
+
+1) Generar las clases .java a partir del fichero asn1:
+
+./asn1bean-compiler.sh -f npdb-sipr.asn1
+
+2) Compilar las clases generadas:
+
+javac -cp ../build/libs-all/asn1bean-1.12.0.jar npdb/sipr/*.java
+
+3) Generamos el .jar con las clases generadas a partir del ASN.1 (para luego usarlas en el cliente java):
+
+jar -cf npdb.jar npdb
+

@@ -1,0 +1,54 @@
+NPDB-SIPR DEFINITIONS IMPLICIT TAGS ::=
+BEGIN
+
+
+--operacionPortabilidad OBJECT-TYPE
+--SYNTAX OperacionPortabilidad
+--ACCESS read-write
+--STATUS mandatory
+--::=86
+
+--rspOperacionPortabilidad OBJECT-TYPE
+--SYNTAX RspOperacionltaPortabilidad
+--ACCESS read-write
+--STATUS mandatory
+--::=87
+
+OperacionPortabilidad ::= SEQUENCE
+{
+tipoOperacion [1] IMPLICIT TipoOperacionPortabilidad,
+numTelefono [2] IMPLICIT NumTelefono,
+operadora [3] IMPLICIT Operadora 
+}
+
+RspOperacionPortabilidad ::= SEQUENCE
+{
+numTelefono [1] IMPLICIT NumTelefono,
+codRetorno [2] IMPLICIT CodigoError
+}
+
+-- TIPOS BASICOS PARA PORTABILIDAD
+-- NumTelefono is the phone number used for portability operations
+NumTelefono ::= NumericString(SIZE(9..15))
+
+-- Operadora is the NRN code of the operator.
+Operadora ::= INTEGER
+
+-- TipoOperacionPortabilidad defines the type of operation to be performed over the data:
+-- portabilidad
+-- 0 = ALTA
+-- 1 = BAJA
+-- 2 = ACTUALIZACION
+TipoOperacionPortabilidad ::= INTEGER
+
+InterfazSGIPSDP ::= SEQUENCE
+{
+numSecuencia [1] IMPLICIT INTEGER,
+msgType      [2] IMPLICIT INTEGER,
+msg              ANY DEFINED BY msgType
+}
+
+CodigoError ::= PrintableString(SIZE(2))
+
+
+END

@@ -1,0 +1,9 @@
+
+1) Compilar la clase N:
+
+javac -cp ../asn1bean/build/libs-all/asn1bean-1.12.0.jar:../asn1bean/bin/npdb.jar NPDBSIPRClient.java
+
+2) Ejecutar la clase:
+
+java -cp ../asn1bean/build/libs-all/asn1bean-1.12.0.jar:../asn1bean/bin/npdb.jar:. NPDBSIPRClient
+
