@@ -1,9 +1,10 @@
 
-1) Compilar la clase N:
+1) Compilar las clases:
 
-javac -cp ../asn1bean/build/libs-all/asn1bean-1.12.0.jar:../asn1bean/bin/npdb.jar NPDBSIPRClient.java
+javac -cp ../asn1bean/build/libs-all/asn1bean-1.12.0.jar:../asn1bean/bin/npdb.jar NPDBSIPRClientOperacion.java
+javac -cp ../asn1bean/build/libs-all/asn1bean-1.12.0.jar:../asn1bean/bin/npdb.jar NPDBSIPRClientConsulta.java
 
-2) Ejecutar la clase:
+2) Ejecutar las clases:
 
-java -cp ../asn1bean/build/libs-all/asn1bean-1.12.0.jar:../asn1bean/bin/npdb.jar:. NPDBSIPRClient
-
+java -cp ../asn1bean/build/libs-all/asn1bean-1.12.0.jar:../asn1bean/bin/npdb.jar:. NPDBSIPRClientOperacion 172.18.248.245 11610 0 659104541 777
+java -cp ../asn1bean/build/libs-all/asn1bean-1.12.0.jar:../asn1bean/bin/npdb.jar:. NPDBSIPRClientConsulta 172.18.248.245 11610 657002146

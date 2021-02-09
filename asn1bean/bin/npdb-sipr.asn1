@@ -41,6 +41,32 @@ Operadora ::= INTEGER
 -- 2 = ACTUALIZACION
 TipoOperacionPortabilidad ::= INTEGER
 
+
+--consultaPortabilidad OBJECT-TYPE
+--SYNTAX ConsultaPortabilidad
+--ACCESS read-write
+--STATUS mandatory
+--::=88
+
+--rspConsultaPortabilidad OBJECT-TYPE
+--SYNTAX RspConsultaPortabilidad
+--ACCESS read-write
+--STATUS mandatory
+--::=89
+
+ConsultaPortabilidad ::= SEQUENCE
+{
+numTelefono [1] IMPLICIT NumTelefono
+}
+
+RspConsultaPortabilidad ::= SEQUENCE
+{
+numTelefono [1] IMPLICIT NumTelefono,
+operadora [2] IMPLICIT Operadora OPTIONAL,
+codRetorno [3] IMPLICIT CodigoError
+}
+
+
 InterfazSGIPSDP ::= SEQUENCE
 {
 numSecuencia [1] IMPLICIT INTEGER,
